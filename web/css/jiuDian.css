@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+}
+
+
+/*搜索框*/
+.JiuDianSouSuo {
+    margin: 215px 0px 40px 110px;
+    width: 390px;
+    height: 352px;
+    background-color: #5A5A5A;
+    color: #ffffff;
+
+}
+
+.JiuDianSouSuo1 {
+    padding: 4px 21px;
+}
+
+.JiuDianSouSuo1 div {
+    margin: 11px;
+}
+
+.JiuDianSouSuo1 input {
+    width: 290px;
+    height: 33px;
+}
+.JiuDianSouSuo2{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+.line{
+    width: 100px;
+    border: 1px solid #FFFFFF;
+}
+
+
+.LiSi{
+  padding: 11px 9px ;
+    margin:-98px;
+    font-size: 14px;
+    border: 1px solid #E3E3E3;
+    background-color: #E3E3E3;
+    color: #666666;
+    cursor: pointer;
+}
+.LiSi:hover{
+    border: 1px solid #CCCCCC;
+color: #FF6600;
+    border-bottom: #FFFFFF;
+}
+.button1 input{
+    border: none;
+    background-color: #FF9900;
+
+    color: white;
+}
+.button1:hover input{
+    background-color: #FF6600;
+}
+.ww{
+    position: relative;
+    top: 15px;
+    left: 397px;
+}
+/*搜索框结束*/
+
+
+/*热门度假区*/
+/**/
+/**/
+
+/*度假区目录栏*/
+.DuJiaQu{
+
+    width: 1423px;
+    height:478px;
+    background-color: #F7F7F7;
+}
+.DuJiaQu0{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin:33px 109px;
+    width: 1219px;
+    height:320px;
+    background-color: #FFF;
+}
+.DujiaQu2{
+    position: absolute;
+}
+.DuJiaQu1{
+    position: absolute;
+    margin:23px 60px;
+}
+.DuJiaQu3{
+    font-family: 微软雅黑 ;
+    left: 62px;
+    top: 31px;
+    margin: 11px;
+    width: 152px;
+    height: 25px;
+    list-style: none;
+    border-radius: 16px;
+    font-size: 13.5px;
+    opacity: 0.8;
+    text-align: center;
+    line-height: 24px;
+    background-color: #E3E3E3;
+    cursor: pointer;
+}
+.right1{
+    color:#E3E3E3;
+}
+.DuJiaQu3:hover{
+    background-color: #FF8800;
+    opacity: 1;
+    display: block;
+}
+.DuJiaQu3:hover .right1{
+color: white;
+}
+.DuJiaQu4{
+    width: 286px;
+    height: 320px;
+}
+/*度假区目录栏结束*/
+
+/*度假区通用*/
+h2{
+    text-align: center;
+}
+.XiaoBiaoTi{
+    font-size: 21px;
+}
+.GengDuo{
+    margin: 12px 0px;
+    font-size:12px;
+    color: #999999;
+    font-family: 微软雅黑;
+}
+.GengDuo a{
+    font-family: 微软雅黑;
+    position: relative;
+    left: 317px;
+    font-size:12px;
+    color: #999999;
+    text-decoration: none;
+}
+.GengDuo a:hover{
+    color: #FF6600;
+    text-decoration:underline;
+}
+.ChangBaiShan1{
+    display: flex;
+    align-items: center;
+}
+.ChangBaiShan1 div{
+    margin: 7px;
+}
+.JiuDianname{
+    font-size:14px;
+
+}
+.yang{
+    color: #FF6600;
+    font-size: 13px;
+}
+.JiaGe{
+    font-weight: 900;
+    font-size: 24px;
+    color: #FF6600;
+}
+.Qi{
+    font-size: 12px;
+    color: #999999;
+}
+
+.ChangBaiShan{
+    position: relative;
+    left: 20px;
+    
+margin: 20px;
+}
+
+
+
+
+
+
+
+.aaaa{
+    display: none;
+}
+/**/
+/**/
+/*热门度假区结束*/
