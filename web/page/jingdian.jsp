@@ -18,28 +18,28 @@
     <h3 class="main_tit">景点推荐<%--<a id="smartShelfUrl" href="javascript:void(0);" >查看更多<span>&gt;</span></a>--%></h3>
     <div class="main_content_box main_recommend clearfix">
         <ul class="recommend_tab_t">
-            <li class="active city_js" data="79" data2="">上海</li>
-            <li class=" city_js" data="87" data2="">苏州</li>
-            <li class=" city_js" data="83" data2="">无锡</li>
-            <li class=" city_js" data="82" data2="">南京</li>
-            <li class=" city_js" data="100" data2="">杭州</li>
-            <li class=" city_js" data="137" data2="">厦门</li>
-            <li class=" city_js" data="104" data2="">宁波</li>
-            <li class=" city_js" data="86" data2="">常州</li>
+            <li class="city_js" onclick="city(this)">沈阳</li>
+            <li class="city_js" onclick="city(this)">大连</li>
+            <li class="city_js" onclick="city(this)">无锡</li>
+            <li class="city_js" onclick="city(this)">南京</li>
+            <li class="city_js" onclick="city(this)">杭州</li>
+            <li class="city_js" onclick="city(this)">厦门</li>
+            <li class="city_js" onclick="city(this)">宁波</li>
+            <li class="city_js" onclick="city(this)">常州</li>
         </ul>
 
         <!-- 城市列表 -->
         <div class="recommend_list_content" style="display: block;">
             <div class="main_content_l ticket_icon">
-                <ul class="recommend_tab_l">
-                    <li class="active subject_js" data="50">主题乐园<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="17">博物馆<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="10">都市观光<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="11">田园度假<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="1530">团队拓展<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="1531">水乡古镇<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="3">温泉<i class="ticket_icon"></i></li>
-                    <li class=" subject_js" data="1536">民俗风情<i class="ticket_icon"></i></li>
+                <ul class="recommend_tab_l" id="jd_type">
+                    <li class="subject_js" onclick="jdtype(this)">主题乐园<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">博物馆<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">都市观光<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">田园度假<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">团队拓展<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">水乡古镇<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">温泉<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">民俗风情<i class="ticket_icon"></i></li>
                 </ul>
             </div>
             <ul class="promotion_list " style="display: block;">
