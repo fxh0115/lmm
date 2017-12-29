@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,6 +23,8 @@ public class JDTypeServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String city_name = request.getParameter("city_name");
+        HttpSession session = request.getSession();
+        session.setAttribute("city_name",city_name);
         JDTypeService jdTypeService = new JDTYPEImpl();
         List<JDTYPE> list = jdTypeService.selectJDTYPE(city_name);
 
