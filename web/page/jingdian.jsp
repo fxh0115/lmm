@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>景点查询</title>
     <link rel="stylesheet" href="../css/jingdian.css">
     <script src="../js/jingdian.js"></script>
 </head>
@@ -20,29 +20,28 @@
         <ul class="recommend_tab_t">
             <li class="city_js" onclick="city(this)">沈阳</li>
             <li class="city_js" onclick="city(this)">大连</li>
-            <li class="city_js" onclick="city(this)">无锡</li>
-            <li class="city_js" onclick="city(this)">南京</li>
-            <li class="city_js" onclick="city(this)">杭州</li>
-            <li class="city_js" onclick="city(this)">厦门</li>
-            <li class="city_js" onclick="city(this)">宁波</li>
-            <li class="city_js" onclick="city(this)">常州</li>
+            <li class="city_js" onclick="city(this)">抚顺</li>
+            <li class="city_js" onclick="city(this)">北京</li>
+            <li class="city_js" onclick="city(this)">天津</li>
+            <li class="city_js" onclick="city(this)">长春</li>
         </ul>
 
         <!-- 城市列表 -->
         <div class="recommend_list_content" style="display: block;">
             <div class="main_content_l ticket_icon">
                 <ul class="recommend_tab_l" id="jd_type">
-                    <li class="subject_js" onclick="jdtype(this)">主题乐园<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">博物馆<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">都市观光<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">田园度假<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">团队拓展<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">水乡古镇<i class="ticket_icon"></i></li>
-                    <li class="subject_js" onclick="jdtype(this)">温泉<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">湖光山色<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">海滨岛屿<i class="ticket_icon"></i></li>
                     <li class="subject_js" onclick="jdtype(this)">民俗风情<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">滑雪<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">温泉<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">主题乐园<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">田园度假<i class="ticket_icon"></i></li>
+                    <li class="subject_js" onclick="jdtype(this)">登山徒步<i class="ticket_icon"></i></li>
                 </ul>
             </div>
-            <ul class="promotion_list " style="display: block;">
+            <ul class="promotion_list " id="promotion_list" style="display: block;">
+                <%--
                 <li>
                     <a href="http://ticket.lvmama.com/scenic-175649" target="_blank"
                        onclick="cmcTag('门票频道页-PC-站点-P4-景点推荐-上海主题乐园-001-上海迪士尼乐园','PC门票频道页景点推荐');">
@@ -57,7 +56,7 @@
                         </div>
                     </a>
                 </li>
-                <%-- <li>
+                <li>
                      <a href="http://ticket.lvmama.com/scenic-120044" target="_blank"
                         onclick="cmcTag('门票频道页-PC-站点-P4-景点推荐-上海主题乐园-002-上海欢乐谷','PC门票频道页景点推荐');">
                          <div class="promotion_img_box">

@@ -13,7 +13,7 @@ public interface JingDianService
      * @param jd_id
      * @return
      */
-    public List<JingDianInfo> loadJingDianInfo(int jd_id);
+    public List<JingDianInfo> loadJingDianInfo(String jd_id);
 
     /**
      * 根据地址和类型查询相关景点
@@ -22,7 +22,7 @@ public interface JingDianService
      * @param jd_type
      * @return
      */
-    public List<JingDianInfo> selectJingDianInfo(String jd_name, String jd_type);
+    public List<JingDianInfo> selectJingDianInfo(String city_name, String jd_type);
 
     /**
      * 查询所有景点

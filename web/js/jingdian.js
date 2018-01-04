@@ -5,8 +5,8 @@
 function city(obj) {
     var city = obj.innerHTML;
 
-    //²éÑ¯¶ÔÓ¦³ÇÊÐµÄ·ç¾°ÀàÐÍÏÔÊ¾ÔÚliÖÐ
-    //Ð´Ò»¶Îajax²éÑ¯
+    //æŸ¥è¯¢å¯¹åº”åŸŽå¸‚çš„é£Žæ™¯ç±»åž‹æ˜¾ç¤ºåœ¨liä¸­
+    //å†™ä¸€æ®µajaxæŸ¥è¯¢
     var xhr = new XMLHttpRequest();
     xhr.open("post", "/JDTypeServlet", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -29,9 +29,44 @@ function city(obj) {
 }
 
 function jdtype(obj) {
+
     var type = obj.innerHTML;
     type = type.substring(0, type.indexOf("<"));
-    alert(type);
+
+    //å†™ä¸€æ®µajaxæŸ¥è¯¢
+    var xhr = new XMLHttpRequest();
+    xhr.open("post", "/JingDianServlet", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("jd_type=" + type);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200 || xhr.status == 302) {
+                var data = xhr.responseText;
+                var list = JSON.parse(data);
+                var html = "";
+
+                for (var i = 0; i < list.length; i++) {
+                    html += '<li>';
+                    html += '	<a href="/JDInfoServlet?jd_id=' + list[i].jd_id + '" target="_blank"';
+                    html += '	onclick="">';
+                    html += '		<div class="promotion_img_box">';
+                    html += '		<img src="/images/' + list[i].jd_photoname + '.jpg"';
+                    html += '	width="222" height="150" alt="">';
+                    html += '		</div>';
+                    html += '		<div class="promotion_footer">';
+                    html += '		<h5 title="' + list[i].jd_name + '">' + list[i].jd_name + '</h5>';
+                    html += '		<span class="promotion_comment_b">97.6% å¥½è¯„</span>';
+                    html += '	<p><span>Â¥<dfn>' + list[i].jd_price + '</dfn></span><samp>èµ·</samp></p>';
+                    html += '	</div>';
+                    html += '	</a>';
+                    html += '</li>';
+                }
+
+                document.getElementById("promotion_list").innerHTML = html;
+            }
+        }
+    }
 }
+
 
 

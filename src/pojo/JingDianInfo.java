@@ -5,92 +5,128 @@ package pojo;
  */
 public class JingDianInfo
 {
-    private String JD_ID;
-    private String JD_NAME;
-    private int JD_PRICE;
-    private String JD_ADDRESS;
-    private String JD_PHOTONAME;
-    private String JD_INTRODUCTION;
-    private String JD_TYPE;
+    private String jd_id;
+    private String jd_name;
+    private int jd_price;
+    private String jd_address;
+    private String jd_photoname;
+    private String jd_introduction;
+    private String jd_type;
+    private String city_name;
+    private String jd_rank;
+    private String jd_date;
 
-    public JingDianInfo(String JD_ID, String JD_NAME, int JD_PRICE, String JD_ADDRESS, String JD_PHOTONAME, String JD_INTRODUCTION, String JD_TYPE)
+    public JingDianInfo(String jd_id, String jd_name, int jd_price, String jd_address, String jd_photoname, String jd_introduction, String jd_type, String city_name, String jd_rank, String jd_date)
     {
-        this.JD_ID = JD_ID;
-        this.JD_NAME = JD_NAME;
-        this.JD_PRICE = JD_PRICE;
-        this.JD_ADDRESS = JD_ADDRESS;
-        this.JD_PHOTONAME = JD_PHOTONAME;
-        this.JD_INTRODUCTION = JD_INTRODUCTION;
-        this.JD_TYPE = JD_TYPE;
+        this.jd_id = jd_id;
+        this.jd_name = jd_name;
+        this.jd_price = jd_price;
+        this.jd_address = jd_address;
+        this.jd_photoname = jd_photoname;
+        this.jd_introduction = jd_introduction;
+        this.jd_type = jd_type;
+        this.city_name = city_name;
+        this.jd_rank = jd_rank;
+        this.jd_date = jd_date;
     }
 
-    public String getJD_ID()
+    public String getJd_id()
     {
-        return JD_ID;
+        return jd_id;
     }
 
-    public void setJD_ID(String JD_ID)
+    public void setJd_id(String jd_id)
     {
-        this.JD_ID = JD_ID;
+        this.jd_id = jd_id;
     }
 
-    public String getJD_NAME()
+    public String getJd_name()
     {
-        return JD_NAME;
+        return jd_name;
     }
 
-    public void setJD_NAME(String JD_NAME)
+    public void setJd_name(String jd_name)
     {
-        this.JD_NAME = JD_NAME;
+        this.jd_name = jd_name;
     }
 
-    public int getJD_PRICE()
+    public int getJd_price()
     {
-        return JD_PRICE;
+        return jd_price;
     }
 
-    public void setJD_PRICE(int JD_PRICE)
+    public void setJd_price(int jd_price)
     {
-        this.JD_PRICE = JD_PRICE;
+        this.jd_price = jd_price;
     }
 
-    public String getJD_ADDRESS()
+    public String getJd_address()
     {
-        return JD_ADDRESS;
+        return jd_address;
     }
 
-    public void setJD_ADDRESS(String JD_ADDRESS)
+    public void setJd_address(String jd_address)
     {
-        this.JD_ADDRESS = JD_ADDRESS;
+        this.jd_address = jd_address;
     }
 
-    public String getJD_PHOTONAME()
+    public String getJd_photoname()
     {
-        return JD_PHOTONAME;
+        return jd_photoname;
     }
 
-    public void setJD_PHOTONAME(String JD_PHOTONAME)
+    public void setJd_photoname(String jd_photoname)
     {
-        this.JD_PHOTONAME = JD_PHOTONAME;
+        this.jd_photoname = jd_photoname;
     }
 
-    public String getJD_INTRODUCTION()
+    public String getJd_introduction()
     {
-        return JD_INTRODUCTION;
+        return jd_introduction;
     }
 
-    public void setJD_INTRODUCTION(String JD_INTRODUCTION)
+    public void setJd_introduction(String jd_introduction)
     {
-        this.JD_INTRODUCTION = JD_INTRODUCTION;
+        this.jd_introduction = jd_introduction;
     }
 
-    public String getJD_TYPE()
+    public String getJd_type()
     {
-        return JD_TYPE;
+        return jd_type;
     }
 
-    public void setJD_TYPE(String JD_TYPE)
+    public void setJd_type(String jd_type)
     {
-        this.JD_TYPE = JD_TYPE;
+        this.jd_type = jd_type;
+    }
+
+    public String getCity_name()
+    {
+        return city_name;
+    }
+
+    public void setCity_name(String city_name)
+    {
+        this.city_name = city_name;
+    }
+
+    public String getJd_rank()
+    {
+        return jd_rank;
+    }
+
+    public void setJd_rank(String jd_rank)
+    {
+        this.jd_rank = jd_rank;
+    }
+
+    public String getJd_date()
+    {
+        return jd_date;
+    }
+
+    public void setJd_date(String jd_date)
+    {
+        this.jd_date = jd_date;
     }
 }

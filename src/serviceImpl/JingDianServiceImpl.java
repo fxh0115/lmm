@@ -18,7 +18,7 @@ import java.util.List;
 public class JingDianServiceImpl implements JingDianService
 {
     @Override
-    public List<JingDianInfo> loadJingDianInfo(int jd_id)
+    public List<JingDianInfo> loadJingDianInfo(String jd_id)
     {
         List<JingDianInfo> list = new ArrayList();
         try
@@ -26,7 +26,7 @@ public class JingDianServiceImpl implements JingDianService
             Connection conn = DButil.getConnection();
             String sql = "select * from jingdianinfo where jd_id = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, jd_id);
+            ps.setString(1, jd_id);
             ResultSet rs = ps.executeQuery();
             if (rs.next())
             {
@@ -37,7 +37,10 @@ public class JingDianServiceImpl implements JingDianService
                         rs.getString("jd_address"),
                         rs.getString("jd_photoname"),
                         rs.getString("jd_introduction"),
-                        rs.getString("jd_type")
+                        rs.getString("jd_type"),
+                        rs.getString("city_name"),
+                        rs.getString("jd_rank"),
+                        rs.getString("jd_date")
                 );
                 list.add(t);
             }
@@ -52,18 +55,18 @@ public class JingDianServiceImpl implements JingDianService
     }
 
     @Override
-    public List<JingDianInfo> selectJingDianInfo(String jd_name, String jd_type)
+    public List<JingDianInfo> selectJingDianInfo(String city_name, String jd_type)
     {
         List<JingDianInfo> list = new ArrayList();
         try
         {
             Connection conn = DButil.getConnection();
-            String sql = "select * from JingDianInfo where jd_name = ? and jd_type = ?";
+            String sql = "select * from JingDianInfo where city_name = ? and jd_type = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, jd_name);
+            ps.setString(1, city_name);
             ps.setString(2, jd_type);
             ResultSet rs = ps.executeQuery();
-            if (rs.next())
+            while (rs.next())
             {
                 JingDianInfo t = new JingDianInfo(
                         rs.getString("jd_id"),
@@ -72,7 +75,10 @@ public class JingDianServiceImpl implements JingDianService
                         rs.getString("jd_address"),
                         rs.getString("jd_photoname"),
                         rs.getString("jd_introduction"),
-                        rs.getString("jd_type")
+                        rs.getString("jd_type"),
+                        rs.getString("city_name"),
+                        rs.getString("jd_rank"),
+                        rs.getString("jd_date")
                 );
 
                 list.add(t);
@@ -108,7 +114,10 @@ public class JingDianServiceImpl implements JingDianService
                         rs.getString("jd_address"),
                         rs.getString("jd_photoname"),
                         rs.getString("jd_introduction"),
-                        rs.getString("jd_type")
+                        rs.getString("jd_type"),
+                        rs.getString("city_name"),
+                        rs.getString("jd_rank"),
+                        rs.getString("jd_date")
                 );
 
                 list.add(t);
