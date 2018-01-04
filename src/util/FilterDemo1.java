@@ -17,12 +17,12 @@ public class FilterDemo1 implements Filter
 
     public void init(FilterConfig config) throws ServletException
     {
-        System.out.println("2.初始化");
+
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException
     {
-        System.out.println("3.执行操作");
+
         //编写处理代码
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html; charset=utf-8");
@@ -33,7 +33,7 @@ public class FilterDemo1 implements Filter
 
     public void destroy()
     {
-        System.out.println("5.销毁过滤器");
+
     }
 
 }

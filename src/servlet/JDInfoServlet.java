@@ -26,7 +26,7 @@ public class JDInfoServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String jd_id = request.getParameter("jd_id");
-        System.out.println(jd_id);
+
         //根据jd_id查询景点信息，跳转页面
 
         JingDianService jingDianService = new JingDianServiceImpl();

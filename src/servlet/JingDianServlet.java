@@ -36,10 +36,7 @@ public class JingDianServlet extends HttpServlet
 
         //将集合转变成Json字符串
         if(list.size() != 0){
-            System.out.println(list.get(0).getJd_photoname());
-
             String listJson = JSON.toJSONString(list);
-
             //将Json返回到页面
             response.getWriter().write(listJson);
         }

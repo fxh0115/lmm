@@ -7,8 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
 <head>
     <title>订单支付</title>
+    <script src="../js/zhifu.js"></script>
+
 </head>
 <body>
 
@@ -69,7 +72,7 @@
             </div>
             <div class="orderMainLeft">
                 <div class="orderMain">
-                    <form action="#" method="post" name="orderForm" id="order_submit">
+                    <form method="post" name="orderForm" id="order_submit" enctype="multipart/form-data">
                         <!-- 预订信息 开始 -->
                         <div class="orderBox">
                             <div class="orderTit">
@@ -78,12 +81,10 @@
                                 <span class="orderTit-subTit">在线支付</span>
                             </div>
 
-
                             <!--商品信息-->
                             <div class="ticketLi last main">
                                 <div class="ticketTit">
-                                    <a href="javascript:;" class="ticketTit-link">${sessionScope.jingdianinfo.get(0).jd_name}-门票<span
-                                            class="icon_arrownew"><i>◆</i><b>◆</b></span></a>
+                                    <a href="" class="ticketTit-link">${sessionScope.jingdianinfo.get(0).jd_name}-门票</a>
                                     <span class="tagsback"><i>随时退</i></span>
                                 </div>
 
@@ -91,12 +92,9 @@
                                     <dt>日&emsp;&emsp;期：</dt>
                                     <dd>
                                         <div class="ticket-dataSelect">
-                                            <input type="hidden" id="visitTimeInput" type="text" maxlength="10"
-                                                   name="visitTime" data="2018-01-05" value="2018-01-05"
-                                                   autocomplete="off" readonly="readonly" placeholder="请选择游玩日期">
                                             <input id="showVisitTimeInput" class="input js_yz J_calendar yz_error"
-                                                   type_name="text" type="text" readonly="readonly"
-                                                   placeholder="请选择游玩日期">
+                                                   name="date"
+                                                   type="date" placeholder="请选择游玩日期">
                                             <i class="orderIcon orderIcon-time"></i>
                                             <span class="error_text"><i
                                                     class="tip-icon tip-icon-error"></i>请选择游玩日期。</span>
@@ -106,24 +104,11 @@
                                 <dl class="orderDl">
                                     <dt>数&emsp;&emsp;量：</dt>
                                     <dd class="orderNumBox clearfix">
-                                        <!-- 不可再增加或减少时，给 orderReduce 加num_stop-->
-                                        <a href="javascript:;" class="orderContro orderReduce num_stop">-</a>
-                                        <input type="text" class="ordeRoomNum js_input" name="itemMap[8123245].quantity"
-                                               value="1" goodsId="8123245"
-                                               adult="1" child="0" maxQuantity="99" minQuantity="1"
-                                               goodsType="NOTICETYPE_DISPLAY" mainItem="true" autocomplete="off"
-                                               stockQuantity="999" ticketType="" ticketDisneyNum="1"
-                                               suppGoodsName="虎园-成人票" price="7800">
-                                        <a href="javascript:;" class="orderContro orderAdd">+</a>
+                                        <input type="number" class="ordeRoomNum js_input" name="count"
+                                               id="menpiao_count"
+                                               value="1" min="1" max="99">
                                     </dd>
                                 </dl>
-                                <!-- 买赠开始 -->
-                                <!-- 不符合规范  order_dl 加class: order_dlNo-->
-                                <div class="gift" style="display:none">
-                                    <span class="gift-tit">赠 品：</span>
-                                    <ul class="gift-list">
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                         <!-- 预订信息 结束 -->
@@ -138,56 +123,33 @@
                             </div>
                             <div id="userinfoDiv">
                                 <span class="red">*</span>中文姓名：<input type="text" name="qupiaoname" placeholder="请输入姓名">
-                                <span class="red">*</span> 手机号码：<input type="text" name="phone" placeholder="请输入手机号码">
+                                <span class="red">*</span> 手机号码：<input type="text" name="phonenumber"
+                                                                       placeholder="请输入手机号码">
                                 <span class="red">*</span>证件类型：<input type="text" name="shenfenzheng"
                                                                       placeholder="请输入身份证号码">
                             </div>
                         </div>
-
-                        <!--验证码-->
-                        <input type="hidden" id="login_user" value="0" status="0"/>
-                        <div id="picCodeContainer">
-                            <div id="picCodeDiv">
-                                <input type="hidden" id="checkCodeValid" value="0"/>
-                                <dl class="orderDl">
-                                    <dt><span class="red">*</span>验证码：</dt>
-                                    <dd>
-                                        <input type="hidden" name="checkCode2" id="checkCode2"/>
-                                        <input type="text" name="pic_checkCode" id="pic_checkCode"
-                                               onfocus="javascript:showPicImg();" class="input js_yz" maxlength="10"
-                                               placeholder="请输入计算结果"/>
-                                        <img src="" id="createCheckCode" class="vertical_t" align="middle"
-                                             onclick="javascript:reloadPicCode();"
-                                             style="width:100px;height:34px;cursor:pointer;display:none">
-                                        <a href="javascript:reloadPicCode();" class="orderLinkBtn"
-                                           id="createCheckCodeHref" style="display:none">&nbsp;看不清,换一个.</a>
-                                    </dd>
-                                </dl>
-                            </div>
-
-                        </div>
-
                         <!-- 配送方式 结束 -->
 
                     </form>
                     <div class="orderFoot">
                         <div class="payBox">
-                            <a class="btn btn-xl btn-orange js_tijiao btn-forbidden" href="javascript:;"
+                            <span class="btn btn-xl btn-orange js_tijiao btn-forbidden"
                                id="submitCreateOrder">
                                 立即付款
-                            </a>
+                            </span>
+                            <div id="errmess"></div>
                             <p class="payBox-contract"><a href="javascript:;" class="check checked"><span
                                     class="checkbox"></span></a>已阅读并同意 <a href="javascript:;"
                                                                           class="orderLinkBtn js_xieyiBtn">驴妈妈旅游网预订条款</a>
                             </p>
                         </div>
                     </div>
-                </div><!-- //orderMain -->
+                </div>
             </div>
-
         </div>
-    </div><!-- //warp -->
-</div><!-- //mainBox -->
+    </div>
+</div>
 
 </body>
 </html>
