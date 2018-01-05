@@ -9,9 +9,10 @@
 <html>
 <head>
     <title>景点信息</title>
+    <link rel="stylesheet" href="../css/jd_info.css">
 </head>
 <body>
-<div>${sessionScope.jingdianinfo.get(0).jd_introduction}</div>
+
 <!--组装面包屑和天气-->
 <div class="crumbs clearfix">
     <!--面包屑导航、天气-->

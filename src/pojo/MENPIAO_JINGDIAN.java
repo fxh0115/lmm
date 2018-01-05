@@ -14,8 +14,10 @@ public class MENPIAO_JINGDIAN
     private String mp_qpphone;
     private int mp_status;
     private String jd_id;
+    private String jd_name;
 
-    public MENPIAO_JINGDIAN(String mp_id, String username, String mp_qpname, String mp_sfz, String mp_count, String mp_date, String mp_qpphone, int mp_status, String jd_id)
+
+    public MENPIAO_JINGDIAN(String mp_id, String username, String mp_qpname, String mp_sfz, String mp_count, String mp_date, String mp_qpphone, int mp_status, String jd_id, String jd_name)
     {
         this.mp_id = mp_id;
         this.username = username;
@@ -26,6 +28,7 @@ public class MENPIAO_JINGDIAN
         this.mp_qpphone = mp_qpphone;
         this.mp_status = mp_status;
         this.jd_id = jd_id;
+        this.jd_name = jd_name;
     }
 
     public String getMp_id()
@@ -116,5 +119,15 @@ public class MENPIAO_JINGDIAN
     public void setJd_id(String jd_id)
     {
         this.jd_id = jd_id;
+    }
+
+    public String getJd_name()
+    {
+        return jd_name;
+    }
+
+    public void setJd_name(String jd_name)
+    {
+        this.jd_name = jd_name;
     }
 }
