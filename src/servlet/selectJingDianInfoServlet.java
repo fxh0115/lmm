@@ -22,16 +22,9 @@ public class selectJingDianInfoServlet extends HttpServlet
 {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        //查询景点数据
-
-        //获取查询参数
-        HttpSession session = request.getSession();
-        String city_name = (String) session.getAttribute("city_name");
-        String jd_type = request.getParameter("jd_type");
-
-        //调用查询方法
+        //查询所有景点数据
         JingDianService jingDianService = new JingDianServiceImpl();
-        List<JingDianInfo> list = jingDianService.selectJingDianInfo(city_name, jd_type);
+        List<JingDianInfo> list = jingDianService.selectJingDianInfo();
 
         //将集合转变成Json字符串
         if(list.size() != 0){

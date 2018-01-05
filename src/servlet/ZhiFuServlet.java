@@ -33,12 +33,6 @@ public class ZhiFuServlet extends HttpServlet
 
         String mp_qpname = request.getParameter("qupiaoname");
 
-       /* if (mp_qpname.equals(""))
-        {
-            response.getWriter().write("ÇëÌîĞ´È¡Æ±ÈËĞÕÃû");
-            return;
-        }*/
-
         String mp_sfz = request.getParameter("shenfenzheng");
 
         String mp_count = request.getParameter("count");
