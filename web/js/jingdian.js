@@ -2,24 +2,34 @@
  * Created by ttc on 17-12-28.
  */
 
+window.onload = function () {
+    city(null);
+    jdtype(null);
+}
+
 function city(obj) {
-    var city = obj.innerHTML;
+    var city = "沈阳";
+    var type = ""
+    if (obj != null && obj != "") {
+        city = obj.innerHTML;
+    }
 
     //查询对应城市的风景类型显示在li中
     //写一段ajax查询
     var xhr = new XMLHttpRequest();
-    xhr.open("post", "/JDTypeServlet", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.open("post", "/JDTypeServlet");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded", false);
     xhr.send("city_name=" + city);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200 || xhr.status == 302) {
                 var data = xhr.responseText;
                 var list = JSON.parse(data);
+                type = list[0].jt_name;
+                jdtype(null, type);
                 var html = "";
-
                 for (var i = 0; i < list.length; i++) {
-                    html += '<li class="subject_js" onclick="jdtype(this)">' + list[i].jt_name + '<i class="ticket_icon"></i></li>';
+                    html += '<li class="subject_js" onclick="jdtype(this,null)">' + list[i].jt_name + '<i class="ticket_icon"></i></li>';
                 }
 
                 document.getElementById("jd_type").innerHTML = html;
@@ -28,14 +38,14 @@ function city(obj) {
     }
 }
 
-function jdtype(obj) {
-
-    var type = obj.innerHTML;
-    type = type.substring(0, type.indexOf("<"));
-
+function jdtype(obj, type) {
+    if (obj != null && obj != "") {
+        type = obj.innerHTML;
+        type = type.substring(0, type.indexOf("<"));
+    }
     //写一段ajax查询
     var xhr = new XMLHttpRequest();
-    xhr.open("post", "/JingDianServlet", true);
+    xhr.open("post", "/JingDianServlet");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("jd_type=" + type);
     xhr.onreadystatechange = function () {
