@@ -20,7 +20,7 @@ function func() {
                     html += '<tr >';
                     html += '	<td width="400">' + menpiao_jingdienList[i].jd_name + '</td>';
                     html += '	<td width="80">' + menpiao_jingdienList[i].mp_count + '</td>';
-                    html += '	<td width="72">' + menpiao_jingdienList[i].mp_date + '</td>';
+                    html += '	<td width="100">' + menpiao_jingdienList[i].mp_date + '</td>';
                     html += '	<td width="70">' + menpiao_jingdienList[i].mp_status + '</td>';
                     html += '	<td width="110">退票</td>';
                     html += '	<td width="110">查看景点</td>';

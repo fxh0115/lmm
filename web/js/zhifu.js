@@ -24,3 +24,10 @@ window.onload = function () {
     }
 
 }
+
+function numchange() {
+    var count = document.getElementById("menpiao_count").value;
+    var prica = document.getElementById("nobd-text3").innerHTML;
+    var zongshu = count * prica;
+    document.getElementById("priceCount").innerHTML = zongshu;
+}

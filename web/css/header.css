@@ -1,0 +1,38 @@
+
+.img{
+    margin: 18px 119px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+.xiaoshou{
+    cursor: pointer;
+}
+.header1{
+    width: 1423px;
+    height: 40px;
+    background-color: #ff5953;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
+.souye{
+padding: 6px;
+    cursor: pointer;
+
+}
+.souye:hover{
+background-color: #2B1919;
+}
+
+.header1 a{
+   margin-left: 100px;
+
+}
+
+.DingDan{
+    margin-left: 500px;
+}

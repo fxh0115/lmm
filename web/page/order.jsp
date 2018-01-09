@@ -10,15 +10,16 @@
 <head>
     <title>订单</title>
     <script src="../js/order.js"></script>
+    <link rel="stylesheet" href="/css/order.css">
 </head>
 <body>
-
+<jsp:include page="header.jsp"/>
 <!-- 主体部分开始-->
 <div class="newmember_main">
     <!-- 会员中心左侧菜单栏 -->
     <div class="newmember_leftside">
         <dl>
-            <dt><i class="order_icon"></i>订单中心<i class="downarr"></i></dt>
+            <dd><i class="order_icon"></i>订单中心<i class="downarr"></i></dd>
             <dd><a href="#" id="lvnav_order">门票订单</a></dd>
             <dd><a href="#" id="lvnav_flight">酒店订单</a></dd>
             <dd><a href="#" id="lvnav_if_order">出行订单</a></dd>
@@ -69,5 +70,6 @@
     <!--  右边部分结束 -->
 </div>
 <!-- 主体部分结束-->
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
